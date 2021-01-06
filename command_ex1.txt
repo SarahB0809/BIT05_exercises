@@ -3,3 +3,13 @@
 	# Making the repository via Github
 	# Cloning the repository to personal system with: $ git clone [url][name folder]
 
+# creating textfile and updating GitHub
+	$ nano command_ex1.txt
+	$ git add command_ex1.txt
+	$ git commit -am "Message"
+	$ git status
+	$ git log
+	$ git push origin main
+	# Give in username and password --> check GitHub
+
+
