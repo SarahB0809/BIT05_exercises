@@ -1,12 +1,22 @@
 # Exercise 2: Normalisation of data
 # UNF
-
+	DB(staffNo, denistsName, patientNo, patientName, appointment, surgeryNo)
 # 1NF
+	DB(*staffNo*, dentistName, patientNo, patientName, *appointment_date*, appointment_time, surgeryNo)
+	primary key: staffNo and appointmentdate
+	We don't have duplicate groups so we don't have to eliminate them --> 1NF is done
 
-# 2NF
+# 2NF: no partial dependencies --> the whole column needs to be dependend on the primary key
+	#names of the dentist and patients are not dependend on the primary key --> dependend on staffNo and
+	Dentist(*staffNo*, dentistsName)
+	DB(*staffNo*, patientNo, patientName, *appdate*, *appTime*, surgeryNo)
 
-# 3NF
+# 3NF: no transitive dependencies --> columns shouldn't been dependend on a non primary key column
+	Dentist(*staffNo*, dentistsName)
+	Patient(*patientNo*, patientName)
+	DB(*staffNo*, *patientNo*, *appdate*, *appTime*, surgeryNo)
 
-# BCNF
+# BCNF: 
+	The BCNF = 3NF --> no changes are needed
 
 
