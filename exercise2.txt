@@ -1,0 +1,12 @@
+# Exercise 2: Normalisation of data
+# UNF
+
+# 1NF
+
+# 2NF
+
+# 3NF
+
+# BCNF
+
+
