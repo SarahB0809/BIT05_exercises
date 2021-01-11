@@ -1,0 +1,31 @@
+# Exercise 3 solution
+
+	UNF: paNo, paName, waNo, bedNo,	[drugNo, drugName, description,	dosage,	MOA, Un/d, start, finished] 
+
+	1NF: paNo, paName, waNo, bedNo, [drugNo, drugName, description, dosage, MOA, Un/d, start, finished]
+	Changes that need to be made:
+		* No repeating group
+	groups to make:
+		* PatientNo --> full name
+		* Ward no --> 
+	DB: *paNo*, paName, waNo, bedNo, *drugNo*, drugName, description, dosage, MOA, Un/d *start*, finished
+
+	2NF: no partial dependencies --> every column should be dependent on the primary key
+	two new tables:
+		1) Patient: *paNo*, paName, waNo, bedNo, waName
+		2) Drug: *drugNo*, drugName, description, dosage, MOA
+		3) DB: *paNo*, *drugNo*, Un/d, *start*, finished 
+
+	3NF: no transetive dependencies
+	Wardname is entirely dependend on ward number--> but it is not dependend on anything else
+	1 new table:
+		1) Patient: *paNo*, paName, waNo, bedNo
+                2) Drug: *drugNo*, drugName, description, dosage, MOA
+                3) DB: *paNo*, *drugNo*, Un/d, *start*,	finished 
+		4) Ward: *waNo*, waName
+
+	BCNF: any determinant is a candidate key -> are there any other possible keys?
+	check if the primary key can be changed by another column of their table
+	there are no determinantss in this key --> the 3NF = BCNF
+	
+
